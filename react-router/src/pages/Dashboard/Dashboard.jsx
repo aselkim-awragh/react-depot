@@ -1,3 +1,4 @@
+import employees from "../../assets/employees.json";
 function Dashboard() {
   return (
     <div>

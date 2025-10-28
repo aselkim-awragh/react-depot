@@ -1,7 +1,9 @@
 import { useRef, useContext } from "react";
 import { useNavigate } from "react-router";
 import AuthContext from "../../Context/AuthContext";
-
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
 function Login() {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -20,24 +22,24 @@ function Login() {
     navigate("/register");
   }
   return (
-    <form action="" ref={formRef}>
+    <Box component="form">
       <div>
-        <label htmlFor="">User name : </label>
-        <input type="text" ref={usernameRef} />
+        <TextField label="User name" variant="outlined" ref={usernameRef} />
       </div>
       <div>
-        <label htmlFor="">Password : </label>
-        <input type="password" ref={passwordRef} />
+        <TextField label="Password" variant="outlined" ref={passwordRef} />
       </div>
       <div>
-        <input type="button" value="Login" onClick={handleLogin} />
+        <Button onClick={handleLogin} variant="contained">
+          Login
+        </Button>
       </div>
       <div>
         <p>
           Not signed in? <span onClick={navigateToSignUp}>Sign-up here</span>
         </p>
       </div>
-    </form>
+    </Box>
   );
 }
 export default Login;

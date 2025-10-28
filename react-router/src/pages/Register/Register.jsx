@@ -1,6 +1,10 @@
 import { useRef } from "react";
 import { useContext } from "react";
 import AuthContext from "../../Context/AuthContext";
+import Button from "@mui/material/Button";
+import TextField from "@mui/material/TextField";
+import Box from "@mui/material/Box";
+
 function Register() {
   const usernameRef = useRef(null);
   const emailRef = useRef(null);
@@ -14,23 +18,22 @@ function Register() {
     register(userInfo);
   }
   return (
-    <form>
+    <Box component="form">
       <div>
-        <label htmlFor="">User name : </label>
-        <input type="text" ref={usernameRef} />
+        <TextField label="User name" variant="outlined" ref={usernameRef} />
       </div>
       <div>
-        <label htmlFor="">Email : </label>
-        <input type="email" ref={emailRef} />
+        <TextField label="Email" variant="outlined" ref={emailRef} />
       </div>
       <div>
-        <label htmlFor="">Password : </label>
-        <input type="password" ref={passwordRef} />
+        <TextField label="Password" variant="outlined" ref={passwordRef} />
       </div>
       <div>
-        <input type="button" value="Register" onClick={handleRegister} />
+        <Button onClick={handleRegister} variant="contained">
+          Register
+        </Button>
       </div>
-    </form>
+    </Box>
   );
 }
 
