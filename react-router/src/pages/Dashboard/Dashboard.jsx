@@ -1,8 +1,9 @@
-import employees from "../../assets/employees.json";
+import EmployeesList from "./EmployeesList";
 function Dashboard() {
   return (
     <div>
       <h1>Dashboard</h1>
+      <EmployeesList />
     </div>
   );
 }
